@@ -1,0 +1,88 @@
+{
+  "Customer": [
+    {
+      "code": 1,
+      "name": "Salma Ibrahim",
+      "phone": "01154387926",
+      "email": "salma.ibrahim@example.com",
+      "status": true
+    },
+    {
+      "code": 2,
+      "name": "Ali Hassan",
+      "phone": "01025896374",
+      "email": "ali.hassan@example.com",
+      "status": false
+    },
+    {
+      "code": 3,
+      "name": "Mariam Youssef",
+      "phone": "01276935481",
+      "email": "mariam.youssef@example.com",
+      "status": true
+    },
+    {
+      "code": 4,
+      "name": "Omar Khaled",
+      "phone": "01589264731",
+      "email": "omar.khaled@example.com",
+      "status": true
+    },
+    {
+      "code": 5,
+      "name": "Nour Ahmed",
+      "phone": "01095683274",
+      "email": "nour.ahmed@example.com",
+      "status": false
+    },
+    {
+      "code": 6,
+      "name": "Youssef Ibrahim",
+      "phone": "01235468791",
+      "email": "youssef.ibrahim@example.com",
+      "status": true
+    },
+    {
+      "code": 7,
+      "name": "Farida Hassan",
+      "phone": "01145689327",
+      "email": "farida.hassan@example.com",
+      "status": true
+    },
+    {
+      "code": 8,
+      "name": "Karim Mohamed",
+      "phone": "01058932647",
+      "email": "karim.mohamed@example.com",
+      "status": false
+    },
+    {
+      "code": 9,
+      "name": "Yasmine Khalil",
+      "phone": "01263547891",
+      "email": "yasmine.khalil@example.com",
+      "status": true
+    },
+    {
+      "code": 10,
+      "name": "Adam Saleh",
+      "phone": "01189254637",
+      "email": "adam.saleh@example.com",
+      "status": false
+    },
+    {
+      "code": 11,
+      "name": "Sofia Ahmed",
+      "phone": "01054687932",
+      "email": "sofia.ahmed@example.com",
+      "status": true
+    },
+    {
+      "code": 12,
+      "name": "Ziad Ibrahim",
+      "phone": "01235896471",
+      "email": "ziad.ibrahim@example.com",
+      "status": true
+    }
+  ]
+}

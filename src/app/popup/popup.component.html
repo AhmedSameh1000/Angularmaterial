@@ -1,0 +1,27 @@
+<form [formGroup]="FormData">
+  <h1 mat-dialog-title>{{ inputData.title }}</h1>
+  <div mat-dialog-content>
+    <mat-form-field class="w-100">
+      <mat-label>Name</mat-label>
+      <input formControlName="name" matInput />
+    </mat-form-field>
+    <mat-form-field class="w-100">
+      <mat-label>Email</mat-label>
+      <input formControlName="email" matInput />
+    </mat-form-field>
+
+    <mat-form-field class="w-100">
+      <mat-label>Phone</mat-label>
+      <input formControlName="phone" matInput />
+    </mat-form-field>
+    <div>
+      <mat-checkbox formControlName="status"></mat-checkbox>
+      <mat-label>Is Active</mat-label>
+    </div>
+  </div>
+  <div mat-dialog-actions class="d-flex justify-content-center gap-2">
+    <button mat-raised-button color="warm" (click)="close()">Close</button>
+    <!-- <button mat-raised-button matDialogClose color="accent">Cancel</button> -->
+    <button mat-raised-button color="accent" (click)="SaveData()">Save</button>
+  </div>
+</form>

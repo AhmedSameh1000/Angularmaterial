@@ -1,0 +1,116 @@
+<form [formGroup]="CustomerForm" (ngSubmit)="SaveCustomer()">
+  <mat-card>
+    <mat-card-content>
+      <div class="d-flex w-100 gap-3">
+        <mat-form-field class="w-50">
+          <mat-label> Name</mat-label>
+          <input
+            type="text"
+            formControlName="Name"
+            matInput
+            placeholder="enter your Name"
+          />
+        </mat-form-field>
+        <mat-form-field class="w-50">
+          <mat-label> Email</mat-label>
+          <input
+            type="text"
+            matInput
+            placeholder="enter your Email"
+            formControlName="Email"
+          />
+        </mat-form-field>
+      </div>
+      <div class="d-flex w-100 gap-3">
+        <mat-form-field class="w-50">
+          <mat-label> Phone</mat-label>
+          <input
+            type="text"
+            formControlName="Phone"
+            matInput
+            placeholder="enter your Phone"
+          />
+        </mat-form-field>
+        <mat-form-field class="w-50">
+          <mat-label> Country</mat-label>
+          <!-- <input type="text" matInput placeholder="enter your Country" /> -->
+          <mat-select formControlName="Country">
+            <mat-option *ngFor="let country of CountryList" [value]="country">{{
+              country
+            }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field class="w-100">
+          <mat-label> Address</mat-label>
+          <!-- <input type="text" matInput placeholder="enter your Address" /> -->
+
+          <textarea
+            matInput
+            placeholder="enter your Address"
+            formControlName="Address"
+          ></textarea>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="w-100">
+          <mat-label> Term</mat-label>
+          <input
+            formControlName="Term"
+            type="text"
+            [matAutocomplete]="auto"
+            matInput
+            placeholder="enter Term"
+          />
+          <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+            <mat-option *ngFor="let term of Termslist" [value]="term">{{
+              term
+            }}</mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="w-100">
+          <mat-label> Date Of Birth</mat-label>
+          <input
+            formControlName="DateOfBirth"
+            matInput
+            [matDatepicker]="picker"
+            placeholder="enter your  Date Of Birth"
+          />
+          <mat-datepicker-toggle
+            matIconSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <!-- <mat-hint>DD//MM//YYYY</mat-hint> -->
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div class="d-flex justify-content-start">
+        <mat-radio-group color="primary" formControlName="Gender">
+          <mat-radio-button value="male">Male</mat-radio-button>
+          <mat-radio-button value="female">Female</mat-radio-button>
+        </mat-radio-group>
+        <mat-checkbox color="warm" formControlName="Status"
+          >Is Active</mat-checkbox
+        >
+      </div>
+    </mat-card-content>
+
+    <mat-card-footer class="mb-3">
+      <div class="d-flex justify-content-end me-2 gap-3">
+        <button mat-raised-button color="primary" type="submit">Save</button>
+        <button
+          (click)="ClearForm()"
+          mat-raised-button
+          class="bg-danger text-white"
+          type="button"
+        >
+          Clear
+        </button>
+      </div>
+    </mat-card-footer>
+  </mat-card>
+</form>

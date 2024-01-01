@@ -1,0 +1,90 @@
+<mat-card>
+  <mat-card-header class="d-flex justify-content-between align-items-center">
+    <div class="w-100 d-flex justify-content-start">
+      <mat-form-field>
+        <input
+          type="text"
+          (input)="FilterChange($event)"
+          placeholder="Enter text"
+          matInput
+        />
+      </mat-form-field>
+    </div>
+
+    <div class="w-100 d-flex justify-content-end">
+      <button mat-raised-button color="accent" (click)="Openpopup()">
+        Add User
+      </button>
+    </div>
+  </mat-card-header>
+  <mat-card-content>
+    <table matSort mat-table [dataSource]="DataSource" class="mat-elevation-z8">
+      <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="code">
+        <th mat-sort-header mat-header-cell *matHeaderCellDef>Code</th>
+        <td mat-cell *matCellDef="let element">{{ element.code }}</td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-sort-header mat-header-cell *matHeaderCellDef>Name</th>
+        <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="email">
+        <th mat-sort-header mat-header-cell *matHeaderCellDef>Email</th>
+        <td mat-cell *matCellDef="let element">{{ element.email }}</td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="phone">
+        <th mat-sort-header mat-header-cell *matHeaderCellDef>Phone</th>
+        <td mat-cell *matCellDef="let element">{{ element.phone }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="status">
+        <th mat-sort-header mat-header-cell *matHeaderCellDef>Status</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.status ? "active" : "inactive" }}
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef>Actions</th>
+        <div
+          mat-cell
+          *matCellDef="let element"
+          class="d-flex justify-content-center gap-2 mt-2"
+        >
+          <button
+            mat-raised-button
+            color="primary"
+            (click)="Edit(element.code)"
+          >
+            Edit
+          </button>
+          <button
+            mat-raised-button
+            color="accent"
+            (click)="Remove(element.code)"
+          >
+            Remove
+          </button>
+        </div>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="DisplayCulomns"></tr>
+      <tr mat-row *matRowDef="let row; columns: DisplayCulomns"></tr>
+    </table>
+  </mat-card-content>
+  <mat-card-footer>
+    <mat-paginator
+      [pageSizeOptions]="[10]"
+      showFirstLastButtons
+      (page)="onPageChanged($event)"
+    ></mat-paginator>
+  </mat-card-footer>
+</mat-card>

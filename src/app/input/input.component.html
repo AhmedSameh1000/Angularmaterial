@@ -1,0 +1,25 @@
+<h2>Angular Material-- Input</h2>
+
+<div class="d-flex justify-content-center gap-5">
+  <mat-form-field>
+    <mat-label>User Name</mat-label>
+    <input type="text" matInput placeholder="User Name" />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Skilss</mat-label>
+    <mat-select></mat-select>
+  </mat-form-field>
+</div>
+<hr />
+<!-- /////////////////////////////////// -->
+<h4>Basic mat-select</h4>
+<mat-form-field>
+  <mat-label>Favorite food</mat-label>
+  <mat-select multiple (valueChange)="OnChanges($event)" [(value)]="Data">
+    <mat-option *ngFor="let food of foods" [value]="food.Id">{{
+      food.viewValue
+    }}</mat-option>
+  </mat-select>
+</mat-form-field>
+<hr />
+<button (click)="ShowValues()" class="btn btn-primary">CLick</button>
